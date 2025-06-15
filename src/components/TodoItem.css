@@ -1,0 +1,47 @@
+.todo-item{
+    display: inline-flex;
+    padding: 1rem;
+    text-align: center;
+    margin: .5rem 0;
+    background-color: #252424d3;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo-item:has(input:checked) span{
+    text-decoration: line-through;
+    color: rgb(218, 205, 205);
+}
+
+span{
+    display: inline-flex;
+    width: 100%;
+}
+span input{
+    margin-right: 1rem;
+    accent-color: aquamarine;
+}
+.remove{
+    float: right;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: rotate 1s, scale 1s;
+}
+.remove:hover{
+    background-color: rgba(19, 18, 18, 0.829);
+    rotate: 90deg;
+    scale: 1.1;
+}
+
+.item-name p{
+    text-wrap: wrap;
+    padding-right: 1rem ;
+    text-align: left;
+    line-height: 1.5rem;
+}
+
+

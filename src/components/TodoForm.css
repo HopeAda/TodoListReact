@@ -1,0 +1,39 @@
+.todoForm{
+    background-color: black;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 7px;
+    margin-top: 1.5rem;
+}
+
+form{
+    display: inline-flex;
+    width: 100%;
+
+}
+.todoForm input{
+    padding: .7rem 1rem;
+    width: 75%;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    flex-grow: 1;
+    font-size: .9rem;
+}
+
+.todoForm input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btn{
+    padding: .7rem 1.5rem;
+    border-radius: 2rem;
+    float: right;
+    background-color: aquamarine;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn:hover, .btn:focus{
+    background-color: rgba(127, 255, 212, 0.911);
+}
