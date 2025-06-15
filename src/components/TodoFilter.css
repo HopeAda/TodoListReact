@@ -22,3 +22,7 @@
 .filters button:hover, .filters button:focus{
     background-color: rgba(19, 18, 18, 0.829);
 }
+
+.filters .active{
+    color: aquamarine;
+}
