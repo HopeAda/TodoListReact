@@ -3,6 +3,7 @@ import './App.css'
 import TodoContainer from './components/TodoContainer'
 import TodoForm from './components/TodoForm'
 import TodoFilter from './components/TodoFilter'
+import TodoCount from './components/TodoCount'
 
 function App() {
   const [TodoArray, setTodoArray] = useState(() => {
@@ -16,6 +17,7 @@ function App() {
 
   // Update after adding new todo
   const TodoHandler = (todoitem) =>{
+    setFilterValue("all")
     setTodoArray([todoitem, ...TodoArray])
   }
 
@@ -55,6 +57,13 @@ function App() {
     ))
   }
 
+
+  const clearHandler = () =>{
+    setTodoArray(
+      TodoArray.filter((todo) => !todo.completed)
+    )
+  }
+
   return(
     <div className='todo'>
       <h1>TODO LIST</h1>
@@ -62,6 +71,8 @@ function App() {
       <TodoFilter onFilter = {filterHandler} filterVal = {filterValue}></TodoFilter>
       <TodoContainer todos = {TodoArray} deletefunc = {secondDeleteHandler} togglefunc = {toggleCheckHandler} filter = {filterValue} saveEdit = {saveEditHandler} ></TodoContainer>
       
+      <TodoCount total = {TodoArray.length} completed = {TodoArray.filter((todo) => todo.completed == true).length} incompleted = {TodoArray.filter((todo) => todo.completed == false).length} onClear = {clearHandler}></TodoCount>
+
     </div>
   )
 }

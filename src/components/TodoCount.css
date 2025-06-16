@@ -1,11 +1,15 @@
 .todo-count{
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: .5rem;
+    width: 100%;
 }
 
-.todo-count span{
+.count{
+    flex-grow: 1;
+}
+.count span{
     margin: 0 10px;
     display: inline-flex;
     font-weight: 600;
@@ -14,4 +18,18 @@
 .todo-count span p{
     margin-left: 10px;
     color: aquamarine;
+}
+
+.clear{
+        padding: .7rem 1.5rem;
+    border-radius: 2rem;
+    float: right;
+    background-color: transparent;
+    color: aquamarine;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+.clear:hover{
+    background-color: rgba(19, 18, 18, 0.829);
 }
