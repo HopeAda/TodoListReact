@@ -10,7 +10,9 @@ function App() {
     return savedTodo ? JSON.parse(savedTodo) : []
   })
   const [filterValue, setFilterValue] = useState("all")
-  
+
+
+
 
   // Update after adding new todo
   const TodoHandler = (todoitem) =>{
@@ -46,12 +48,19 @@ function App() {
   }, [TodoArray])
   
 
+  const saveEditHandler = (newText, editIndex) =>{
+    setTodoArray(
+      TodoArray.map((todo, index) =>
+      index == editIndex ? {...todo, text : newText} : todo
+    ))
+  }
+
   return(
     <div className='todo'>
       <h1>TODO LIST</h1>
       <TodoForm todofunc= {TodoHandler}></TodoForm>
       <TodoFilter onFilter = {filterHandler} filterVal = {filterValue}></TodoFilter>
-      <TodoContainer todos = {TodoArray} deletefunc = {secondDeleteHandler} togglefunc = {toggleCheckHandler} filter = {filterValue}></TodoContainer>
+      <TodoContainer todos = {TodoArray} deletefunc = {secondDeleteHandler} togglefunc = {toggleCheckHandler} filter = {filterValue} saveEdit = {saveEditHandler} ></TodoContainer>
       
     </div>
   )
