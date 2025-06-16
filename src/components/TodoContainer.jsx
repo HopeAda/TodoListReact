@@ -1,5 +1,6 @@
 import './TodoContainer.css'
 import TodoItem from './TodoItem'
+import TodoCount from './TodoCount'
 
 
 function TodoContainer(props){
@@ -39,7 +40,7 @@ function TodoContainer(props){
                 </TodoItem>
             ))}
 
-
+            <TodoCount total = {props.todos.length} completed = {props.todos.filter((todo) => todo.completed == true).length} incompleted = {props.todos.filter((todo) => todo.completed == false).length}></TodoCount>
 
         </div>
     )

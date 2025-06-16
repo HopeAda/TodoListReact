@@ -1,0 +1,17 @@
+.todo-count{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+}
+
+.todo-count span{
+    margin: 0 10px;
+    display: inline-flex;
+    font-weight: 600;
+}
+
+.todo-count span p{
+    margin-left: 10px;
+    color: aquamarine;
+}
